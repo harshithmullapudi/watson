@@ -919,7 +919,7 @@ class Main extends React.Component {
 
           {/* Results */}
 
-          <Grid.Column width={7}>
+          <Grid.Column width={13}>
             <Grid.Row>
               {loading ? (
                 <div className="results">
@@ -977,47 +977,6 @@ class Main extends React.Component {
             <Grid.Row>
               {this.getPaginationMenu()}
             </Grid.Row>
-          </Grid.Column>
-
-          <Grid.Column width={6}>
-
-            {/* Sentiment Chart Region */}
-
-            <Grid.Row className='rrr'>
-              <SentimentChart
-                entities={entities}
-                categories={categories}
-                concepts={concepts}
-                keywords={keywords}
-                entityTypes={entityTypes}
-                term={sentimentTerm}
-                onSentimentTermChanged={this.sentimentTermChanged.bind(this)}
-              />
-            </Grid.Row>
-
-            <Divider hidden/>
-            <Divider/>
-            <Divider hidden/>
-
-            {/* Trend Chart Region */}
-
-            <Grid.Row className='ttt'>
-              <div className="trend-chart">
-                <TrendChart
-                  trendData={trendData}
-                  trendLoading={trendLoading}
-                  trendError={trendError}
-                  entities={entities}
-                  categories={categories}
-                  concepts={concepts}
-                  keywords={keywords}
-                  entityTypes={entityTypes}
-                  term={trendTerm}
-                  onGetTrendDataRequest={this.getTrendData.bind(this)}
-                />
-              </div>
-            </Grid.Row>
-
           </Grid.Column>
         </Grid.Row>
       </Grid>
